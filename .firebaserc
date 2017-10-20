@@ -1,5 +1,6 @@
 {
   "projects": {
-    "paulvantech.com ": "portfolio-c3b8e"
+    "paulvantech.com ": "portfolio-c3b8e",
+    "default": "portfolio-c3b8e"
   }
 }
