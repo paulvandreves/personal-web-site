@@ -69,18 +69,357 @@
 						<!-- Projects -->
 							<article id="Projects">
 								<h2 class="major">Projects</h2>
-								<h3><a href="https://innerspace.cloud/demo">Innerspace Cloud</a></h3>
-								<p>Innerspace's Cloud suite is a platform that uses smart storage solutions to provide healthcare facilities with organization, visibility, and inventory control through real-time tracking, security monitoring, and detailed usage data. It achieves this by integrating with physical storage products, such as carts and cabinets, to monitor and manage medical supplies, including specialized equipment like endoscopes.</p>
-								<br />
-								<p>This was the primary project I worked on at Innerspace.
-								 This web application's stack includes SvelteKit, AWS Lambda and Dynamo DB.</p>
+								
+								<!-- Innerspace Cloud Project -->
+								<section class="project-entry">
+									<h3><a href="https://innerspace.cloud/demo">Innerspace Cloud</a></h3>
+									<p>Innerspace's Cloud suite is a platform that uses smart storage solutions to provide healthcare facilities with organization, visibility, and inventory control through real-time tracking, security monitoring, and detailed usage data. It achieves this by integrating with physical storage products, such as carts and cabinets, to monitor and manage medical supplies, including specialized equipment like endoscopes.</p>
+									<p>This was the primary project I worked on at Innerspace. This web application's stack includes SvelteKit, AWS Lambda and Dynamo DB.</p>
+								</section>
+
+								<hr />
+
+								<!-- Alarm Trail Project -->
+								<section class="project-entry">
+									<h3><a href="https://alarmtrail.cloud">Alarm Trail</a></h3>
+									<p>Managing AWS CloudWatch alarms can often be a manual and cumbersome process. In my experience, alarms would come through email, and we documented each one in Confluence. While it worked, it involved a painful, multi-step workflow with constant context switching between CloudWatch logs, Outlook, and Confluence.</p>
+									<p>To address this challenge, I developed Alarm Trail, a lightweight tool designed to automatically document AWS alarms and investigations, providing teams with instant visibility into what happened, when, and who investigated it.</p>
+									
+									<h4>What Alarm Trail offers:</h4>
+									<ul>
+										<li>⚙️ Automatically ingests CloudWatch alarms via webhook</li>
+										<li>🧩 Group alarms by resource and type, helping to identify recurring issues</li>
+										<li>📝 Allows documentation of investigations with notes and status</li>
+										<li>📜 Displays the history of alarms and investigations</li>
+									</ul>
+
+									<h4>Current status:</h4>
+									<ul>
+										<li>🚀 Seeking early feedback from AWS users</li>
+										<li>👉 Try the demo: <a href="https://alarmtrail.cloud">https://alarmtrail.cloud</a> (no signup needed — just click "View Demo")</li>
+									</ul>
+
+									<p>I welcome your feedback on what features would make this tool most useful for your team.</p>
+								</section>
+							
 							</article>
 
 						<!-- Resume -->
 							<article id="Resume">
 								<h2 class="major">Resume</h2>
-								<span class="image main"><img src="./images/paulRes.png" alt="" /></span>
-								<a href="./paulVanDykeResume.pdf" download="./paulVanDykeResume.pdf" >Download Resume</a>
+								
+								<style>
+									.resume-container {
+										max-width: 900px;
+										margin: 0 auto;
+										font-family: 'Source Sans Pro', sans-serif;
+									}
+									.resume-header {
+										text-align: center;
+										margin-bottom: 1em;
+										padding-bottom: 0.8em;
+										border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+									}
+									.resume-header h1 {
+										font-size: 1.8em;
+										margin-bottom: 0.2em;
+										font-weight: 600;
+										letter-spacing: 1px;
+									}
+									.resume-header .title {
+										font-size: 1em;
+										color: rgba(255, 255, 255, 0.8);
+										margin-bottom: 0.5em;
+										font-weight: 300;
+									}
+									.resume-contact {
+										display: flex;
+										flex-wrap: wrap;
+										justify-content: center;
+										gap: 1em;
+										margin-top: 0.5em;
+										font-size: 0.85em;
+									}
+									.resume-contact a, .resume-contact span {
+										display: flex;
+										align-items: center;
+										gap: 0.4em;
+										color: rgba(255, 255, 255, 0.9);
+										text-decoration: none;
+										transition: color 0.3s ease;
+									}
+									.resume-contact a:hover {
+										color: #fff;
+									}
+									.resume-contact .icon {
+										font-size: 0.95em;
+									}
+									.resume-section {
+										margin-bottom: 1.2em;
+									}
+									.resume-section h3 {
+										font-size: 1.2em;
+										margin-bottom: 0.6em;
+										padding-bottom: 0.3em;
+										border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+										font-weight: 600;
+									}
+									.experience-item {
+										margin-bottom: 1em;
+										padding-left: 0.8em;
+										border-left: 2px solid rgba(255, 255, 255, 0.2);
+										padding-bottom: 0.6em;
+									}
+									.experience-header {
+										display: flex;
+										justify-content: space-between;
+										align-items: baseline;
+										flex-wrap: wrap;
+										margin-bottom: 0.3em;
+									}
+									.experience-header h4 {
+										font-size: 1em;
+										font-weight: 600;
+										margin: 0;
+									}
+									.experience-company {
+										font-size: 0.95em;
+										color: rgba(255, 255, 255, 0.9);
+										margin-bottom: 0.2em;
+									}
+									.experience-date {
+										color: rgba(255, 255, 255, 0.6);
+										font-size: 0.85em;
+										font-style: italic;
+									}
+									.experience-description {
+										margin-top: 0.5em;
+										line-height: 1.5;
+										font-size: 0.9em;
+									}
+									.experience-description ul {
+										list-style: none;
+										padding-left: 0;
+										margin-top: 0.3em;
+									}
+									.experience-description li {
+										margin-bottom: 0.4em;
+										padding-left: 1.2em;
+										position: relative;
+									}
+									.experience-description li:before {
+										content: "▸";
+										position: absolute;
+										left: 0;
+										color: rgba(255, 255, 255, 0.5);
+										font-size: 0.9em;
+									}
+									.experience-description a {
+										color: rgba(255, 255, 255, 0.9);
+										text-decoration: underline;
+									}
+									.experience-description a:hover {
+										color: #fff;
+									}
+									.news-item {
+										margin-bottom: 0.6em;
+										padding: 0.5em;
+										background: rgba(255, 255, 255, 0.03);
+										border-radius: 4px;
+										font-size: 0.9em;
+									}
+									.news-item a {
+										color: rgba(255, 255, 255, 0.9);
+										text-decoration: none;
+										display: flex;
+										align-items: center;
+										gap: 0.5em;
+									}
+									.news-item a:hover {
+										color: #fff;
+										text-decoration: underline;
+									}
+									.download-resume {
+										text-align: center;
+										margin-top: 1em;
+										padding-top: 1em;
+										border-top: 2px solid rgba(255, 255, 255, 0.1);
+									}
+									.download-resume .button {
+										display: inline-flex;
+										align-items: center;
+										gap: 0.5em;
+										font-size: 0.9em;
+									}
+									@media screen and (max-width: 736px) {
+										.resume-header h1 {
+											font-size: 1.5em;
+										}
+										.resume-contact {
+											flex-direction: column;
+											gap: 0.5em;
+										}
+										.experience-header {
+											flex-direction: column;
+										}
+									}
+								</style>
+
+								<div class="resume-container">
+									<!-- Header -->
+									<div class="resume-header">
+										<h1>PAUL VAN DYKE</h1>
+										<div class="title">FULL STACK SOFTWARE ENGINEER</div>
+										<div class="resume-contact">
+											<span><i class="icon fa-phone"></i> (231) 633-9666</span>
+											<a href="mailto:paul.aaron.vandyke@gmail.com"><i class="icon fa-envelope"></i> paul.aaron.vandyke@gmail.com</a>
+											<a href="https://www.linkedin.com/in/paul-van-dyke" target="_blank"><i class="icon fa-linkedin"></i> LinkedIn</a>
+											<a href="https://github.com/paulvandreves" target="_blank"><i class="icon fa-github"></i> GitHub</a>
+										</div>
+									</div>
+
+									<!-- Professional Experience -->
+									<div class="resume-section">
+										<h3>💼 PROFESSIONAL EXPERIENCE</h3>
+										
+										<div class="experience-item">
+											<div class="experience-header">
+												<div>
+													<h4>Software Engineer</h4>
+													<div class="experience-company">Innerspace Healthcare</div>
+												</div>
+												<div class="experience-date">October 2022 - October 2025</div>
+											</div>
+											<div class="experience-description">
+												<ul>
+													<li>Developed a SvelteKit/TypeScript cloud endoscopy and security suite documenting IoT locks and cabinets via AWS Lambda, DynamoDB, S3, SQS, SNS, and AWS IoT <a href="https://www.innerspace.cloud/demo" target="_blank">https://www.innerspace.cloud/demo</a></li>
+													<li>Leveraged Vite to build and optimize applications for AWS Lambda serverless deployments</li>
+													<li>Refactored legacy Vue.js and Python Flask cloud suite into a modern, serverless architecture to improve scalability, maintainability, and code quality</li>
+													<li>Migrated PostgreSQL (Amazon RDS) database to AWS DynamoDB, reducing AWS operational costs by over $300/month and delivering consistent, single-digit millisecond latency for read and write operations</li>
+													<li>Provisioned cloud infrastructure with Terraform (HCL) to enable reproducible, Infrastructure-as-Code (IaC) deployments across staging and production environments</li>
+													<li>Implemented comprehensive unit testing with Vitest and Jest</li>
+													<li>Engineered custom React Cards that extended HubSpot functionality and improved CRM workflows</li>
+													<li>Automated CI/CD pipelines with GitHub Actions for continuous integration and serverless deployments</li>
+													<li>Integrated Generative AI into the Software Development Life Cycle (SDLC) using Cursor, GitHub Copilot, and AI-assisted code review tools</li>
+													<li>Styled responsive and mobile-friendly UI layouts with Tailwind CSS</li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="experience-item">
+											<div class="experience-header">
+												<div>
+													<h4>Software Engineer</h4>
+													<div class="experience-company">Equivant</div>
+												</div>
+												<div class="experience-date">November 2019 - September 2022</div>
+											</div>
+											<div class="experience-description">
+												<ul>
+													<li>Developed and maintained an ASP.NET (C#) single-page application with over 400 pages in an Agile/Scrum environment, collaborating closely with QA and DevOps</li>
+													<li>Engineered and supported 700+ Selenium WebDriver integration tests</li>
+													<li>Led team meetings on automation goals and strategy</li>
+													<li>Automated security vulnerability and code quality scans with SonarQube</li>
+													<li>Integrated Google Sheets API with Node.js scripts for automated test reporting</li>
+													<li>Committed, merged and reviewed code with Azure Repos</li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="experience-item">
+											<div class="experience-header">
+												<div>
+													<h4>Software Developer</h4>
+													<div class="experience-company">Healthbridge</div>
+												</div>
+												<div class="experience-date">August 2018 - September 2019</div>
+											</div>
+											<div class="experience-description">
+												<ul>
+													<li>Developed and debugged React & Redux front-end in ES6, with Babel and Webpack for a financial SaaS product focused on HSA overdraft protection</li>
+													<li>Engineered Cypress integration tests, increasing code coverage by 40%</li>
+													<li>Designed k6 capacity tests to ensure scalability under high load</li>
+													<li>Automated QA tasks with Robot Framework End-to-End tests</li>
+													<li>Collaborated with the UI/UX teams via Invision</li>
+													<li>Customized SCSS styling to integrate with third-party libraries</li>
+													<li>Connected front end React components to a Java Spring Boot REST API</li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="experience-item">
+											<div class="experience-header">
+												<div>
+													<h4>Security Operations Analyst</h4>
+													<div class="experience-company">Calvary Solutions</div>
+												</div>
+												<div class="experience-date">July 2017 - July 2018</div>
+											</div>
+											<div class="experience-description">
+												<ul>
+													<li>Supported incident response workflows and documentation in compliance with NERC CIP standards</li>
+													<li>Provided Tier 1 security monitoring and network latency investigations for 80+ power plants</li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="experience-item">
+											<div class="experience-header">
+												<div>
+													<h4>Software Developer</h4>
+													<div class="experience-company">Galvanize</div>
+												</div>
+												<div class="experience-date">January 2017 - July 2017</div>
+											</div>
+											<div class="experience-description">
+												<ul>
+													<li>Built client side Web Application with JavaScript, HTML, CSS, and jQuery</li>
+													<li>Utilized Google Firebase for client side hosting</li>
+													<li>Deployed RESTful API's with Node, Express, PostgreSQL, and MongoDB to Heroku</li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="experience-item">
+											<div class="experience-header">
+												<div>
+													<h4>Non-Commissioned Officer</h4>
+													<div class="experience-company">Marine Corps</div>
+												</div>
+												<div class="experience-date">January 2011 - January 2015</div>
+											</div>
+											<div class="experience-description">
+												<ul>
+													<li>Managed deadly weapons and sensitive equipment totaling millions of dollars</li>
+													<li>Attained secret clearance</li>
+													<li>Awarded Meritorious Mast</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<!-- In The News -->
+									<div class="resume-section">
+										<h3>📰 IN THE NEWS</h3>
+										<div class="news-item">
+											<a href="https://www.record-eagle.com/news/the_biz/tc-native-turns-gamble-into-software-developer-position/article_5d64c8ca-57a6-5eca-bd93-98bf3a30a46a.html" target="_blank">
+												<i class="icon fa-newspaper-o"></i>
+												<span>Record Eagle: TC Native Turns Gamble Into Software Developer Position</span>
+											</a>
+										</div>
+										<div class="news-item">
+											<a href="https://www.usnews.com/news/best-states/michigan/articles/2018-10-21/michigan-man-gets-job-through-tech-incubator" target="_blank">
+												<i class="icon fa-newspaper-o"></i>
+												<span>The Washington Times: Michigan Man Gets Job Through Tech Incubator</span>
+											</a>
+										</div>
+									</div>
+
+									<!-- Download Resume -->
+									<div class="download-resume">
+										<a href="./paulVanDykeResume.pdf" download="./paulVanDykeResume.pdf" class="button special icon fa-download">Download PDF Resume</a>
+									</div>
+								</div>
 							</article>
 
 						<!-- Contact -->
@@ -366,7 +705,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; Untitled.</p>
+						<!-- <p class="copyright">&copy; Untitled.</p> -->
 					</footer>
 
 			</div>-->
