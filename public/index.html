@@ -1,721 +1,704 @@
-<!DOCTYPE HTML>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Paul Van Dyke - Resume</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="favicon.svg" />
+    <link rel="stylesheet" href="assets/css/main.css" />
 
-<html>
-	<head>
-		<title>paul van tech</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="icon" type="image/svg+xml" href="favicon.svg" />
-		<link rel="apple-touch-icon" href="favicon.svg" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-123646135-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-123646135-1");
+    </script>
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123646135-1"></script>
-		<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+    <style>
+      /* ── Theme tokens ─────────────────────────────────────── */
+      :root {
+        --bg: #f5f5f7;
+        --surface: #ffffff;
+        --border: #e0e0e0;
+        --text: #1a1a1a;
+        --text-muted: #666666;
+        --text-subtle: #999999;
+        --accent: #0071e3;
+        --accent-hover: #005bbf;
+        --bullet: #bbbbbb;
+        --shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+      }
 
-		gtag('config', 'UA-123646135-1');
-		</script>
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #111214;
+          --surface: #1c1f23;
+          --border: #2e3238;
+          --text: #e8e8ea;
+          --text-muted: #a0a3a8;
+          --text-subtle: #5a5d63;
+          --accent: #4c9eff;
+          --accent-hover: #73b3ff;
+          --bullet: #4a4d54;
+          --shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+        }
+      }
 
-	</head>
-	<body>
+      /* ── Reset / base ─────────────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+      html {
+        font-size: 16px;
+        scroll-behavior: smooth;
+      }
 
-				<!-- Header -->
-					<header id="header">
-						<div class="logo">
-							<span class="icon fa-diamond"></span>
-						</div>
-						<div class="content">
-							<div class="inner">
-								<h1>Paul Van Dyke</h1>
-								<h2>Software Engineer</h2>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#About">About</a></li>
-								<li><a href="#Projects">Projects</a></li>
-								<li><a href="#Resume">Resume</a></li>
-								<!-- <li><a href="#contact">Contact</a></li> -->
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+      body {
+        background-color: var(--bg);
+        color: var(--text);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
 
-				<!-- Main -->
-					<div id="main">
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      a:hover {
+        color: var(--accent-hover);
+      }
 
-						<!-- About -->
-							<article id="About">
-								<h2>A little about Paul</h2>
-								<p>Hi, thanks for taking the time to get to know me. My name is Paul Van Dyke. I was born and raised in Traverse City, Michigan. I have a lot of hobbies that are not limited to, but include mountain biking, surfing, jujitsu, snowboarding, and freelance development.</p>
+      /* ── Layout ───────────────────────────────────────────── */
+      /* Override Dimension template chrome */
+      #wrapper,
+      #main,
+      #main article {
+        all: unset;
+        display: block;
+      }
 
-								<h2>Paul in the news</h2>
+      .resume-page {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 3rem 1.5rem 4rem;
+      }
 
-								<a href="https://www.record-eagle.com/news/the_biz/tc-native-turns-gamble-into-software-developer-position/article_5d64c8ca-57a6-5eca-bd93-98bf3a30a46a.html"><h4>TC native turns gamble into software developer position</h4></a>
-								<a href="https://www.usnews.com/news/best-states/michigan/articles/2018-10-21/michigan-man-gets-job-through-tech-incubator"><h4>Michigan man gets job through tech incubator</h4></a>
-								
-								<p> <a href="#Projects">Projects</a> </p>
+      /* ── Animations ───────────────────────────────────────── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-							</article>
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
 
-						<!-- Projects -->
-							<article id="Projects">
-								<!-- <h2 class="major">Projects</h2> -->
-								
-								<!-- Innerspace Cloud Project -->
-								<section class="project-entry">
-									<h3><a href="https://innerspace.cloud/demo">Innerspace Cloud</a></h3>
-									<p>Innerspace's Cloud suite is a platform that uses smart storage solutions to provide healthcare facilities with organization, visibility, and inventory control through real-time tracking, security monitoring, and detailed usage data. It achieves this by integrating with physical storage products, such as carts and cabinets, to monitor and manage medical supplies, including specialized equipment like endoscopes.</p>
-									<p>This was the primary project I worked on at Innerspace. This web application's stack includes SvelteKit, AWS Lambda and Dynamo DB.</p>
-								</section>
+      .resume-header {
+        animation: fadeUp 0.5s ease both;
+      }
 
-								<hr />
+      .resume-section {
+        animation: fadeUp 0.5s ease both;
+      }
 
-								<!-- Alarm Trail Project -->
-								<section class="project-entry">
-									<h3><a href="https://alarmtrail.cloud">Alarm Trail</a></h3>
-									<p>Managing AWS CloudWatch alarms can often be a manual and cumbersome process. In my experience, alarms would come through email, and we documented each one in Confluence. While it worked, it involved a painful, multi-step workflow with constant context switching between CloudWatch logs, Outlook, and Confluence.</p>
-									<p>To address this challenge, I developed Alarm Trail, a lightweight tool designed to automatically document AWS alarms and investigations, providing teams with instant visibility into what happened, when, and who investigated it.</p>
-									
-									<h4>What Alarm Trail offers:</h4>
-									<ul>
-										<li>⚙️ Automatically ingests CloudWatch alarms via webhook</li>
-										<li>🧩 Group alarms by resource and type, helping to identify recurring issues</li>
-										<li>📝 Allows documentation of investigations with notes and status</li>
-										<li>📜 Displays the history of alarms and investigations</li>
-									</ul>
+      .resume-section:nth-of-type(1) {
+        animation-delay: 0.1s;
+      }
+      .resume-section:nth-of-type(2) {
+        animation-delay: 0.2s;
+      }
+      .resume-section:nth-of-type(3) {
+        animation-delay: 0.3s;
+      }
 
-									<h4>Current status:</h4>
-									<ul>
-										<li>🚀 Seeking early feedback from AWS users</li>
-										<li>👉 Try the demo: <a href="https://alarmtrail.cloud">https://alarmtrail.cloud</a> (no signup needed — just click "View Demo")</li>
-									</ul>
+      .experience-item {
+        opacity: 0;
+        animation: fadeUp 0.4s ease forwards;
+      }
 
-									<p>I welcome your feedback on what features would make this tool most useful for your team.</p>
-								</section>
-								<p> <a href="#Resume">Resume</a> </p>
-							</article>
+      .experience-item:nth-child(1) {
+        animation-delay: 0.15s;
+      }
+      .experience-item:nth-child(2) {
+        animation-delay: 0.22s;
+      }
+      .experience-item:nth-child(3) {
+        animation-delay: 0.29s;
+      }
+      .experience-item:nth-child(4) {
+        animation-delay: 0.36s;
+      }
+      .experience-item:nth-child(5) {
+        animation-delay: 0.43s;
+      }
+      .experience-item:nth-child(6) {
+        animation-delay: 0.5s;
+      }
+      .experience-item:nth-child(7) {
+        animation-delay: 0.57s;
+      }
 
-						<!-- Resume -->
-							<article id="Resume">								
-								<style>
-									.resume-container {
-										max-width: 900px;
-										margin: 0 auto;
-										font-family: 'Source Sans Pro', sans-serif;
-									}
-									.resume-header {
-										text-align: center;
-										margin-bottom: 1em;
-										padding-bottom: 0.8em;
-										border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-									}
-									.resume-header h1 {
-										font-size: 1.8em;
-										margin-bottom: 0.2em;
-										font-weight: 600;
-										letter-spacing: 1px;
-									}
-									.resume-header .title {
-										font-size: 1em;
-										color: rgba(255, 255, 255, 0.8);
-										margin-bottom: 0.5em;
-										font-weight: 300;
-									}
-									.resume-contact {
-										display: flex;
-										flex-wrap: wrap;
-										justify-content: center;
-										gap: 1em;
-										margin-top: 0.5em;
-										font-size: 0.85em;
-									}
-									.resume-contact a, .resume-contact span {
-										display: flex;
-										align-items: center;
-										gap: 0.4em;
-										color: rgba(255, 255, 255, 0.9);
-										text-decoration: none;
-										transition: color 0.3s ease;
-									}
-									.resume-contact a:hover {
-										color: #fff;
-									}
-									.resume-contact .icon {
-										font-size: 0.95em;
-									}
-									.resume-section {
-										margin-bottom: 1.2em;
-									}
-									.resume-section h3 {
-										font-size: 1.2em;
-										margin-bottom: 0.6em;
-										padding-bottom: 0.3em;
-										border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-										font-weight: 600;
-									}
-									.experience-item {
-										margin-bottom: 1em;
-										padding-left: 0.8em;
-										border-left: 2px solid rgba(255, 255, 255, 0.2);
-										padding-bottom: 0.6em;
-									}
-									.experience-header {
-										display: flex;
-										justify-content: space-between;
-										align-items: baseline;
-										flex-wrap: wrap;
-										margin-bottom: 0.3em;
-									}
-									.experience-header h4 {
-										font-size: 1em;
-										font-weight: 600;
-										margin: 0;
-									}
-									.experience-company {
-										font-size: 0.95em;
-										color: rgba(255, 255, 255, 0.9);
-										margin-bottom: 0.2em;
-									}
-									.experience-date {
-										color: rgba(255, 255, 255, 0.6);
-										font-size: 0.85em;
-										font-style: italic;
-									}
-									.experience-description {
-										margin-top: 0.5em;
-										line-height: 1.5;
-										font-size: 0.9em;
-									}
-									.experience-description ul {
-										list-style: none;
-										padding-left: 0;
-										margin-top: 0.3em;
-									}
-									.experience-description li {
-										margin-bottom: 0.4em;
-										padding-left: 1.2em;
-										position: relative;
-									}
-									.experience-description li:before {
-										content: "▸";
-										position: absolute;
-										left: 0;
-										color: rgba(255, 255, 255, 0.5);
-										font-size: 0.9em;
-									}
-									.experience-description a {
-										color: rgba(255, 255, 255, 0.9);
-										text-decoration: underline;
-									}
-									.experience-description a:hover {
-										color: #fff;
-									}
-									.news-item {
-										margin-bottom: 0.6em;
-										padding: 0.5em;
-										background: rgba(255, 255, 255, 0.03);
-										border-radius: 4px;
-										font-size: 0.9em;
-									}
-									.news-item a {
-										color: rgba(255, 255, 255, 0.9);
-										text-decoration: none;
-										display: flex;
-										align-items: center;
-										gap: 0.5em;
-									}
-									.news-item a:hover {
-										color: #fff;
-										text-decoration: underline;
-									}
-									.download-resume {
-										text-align: center;
-										margin-top: 1em;
-										padding-top: 1em;
-										border-top: 2px solid rgba(255, 255, 255, 0.1);
-									}
-									.download-resume .button {
-										display: inline-flex;
-										align-items: center;
-										gap: 0.5em;
-										font-size: 0.9em;
-									}
-									@media screen and (max-width: 736px) {
-										.resume-header h1 {
-											font-size: 1.5em;
-										}
-										.resume-contact {
-											flex-direction: column;
-											gap: 0.5em;
-										}
-										.experience-header {
-											flex-direction: column;
-										}
-									}
-								</style>
+      .download-bar {
+        animation: fadeIn 0.6s ease 0.55s both;
+      }
 
-								<div class="resume-container">
-									<!-- Header -->
-									<div class="resume-header">
-										<h1>PAUL VAN DYKE</h1>
-										<div class="title">FULL STACK SOFTWARE ENGINEER</div>
-										<div class="resume-contact">
-											<span><i class="icon fa-phone"></i> (231) 633-9666</span>
-											<a href="mailto:paul.aaron.vandyke@gmail.com"><i class="icon fa-envelope"></i> paul.aaron.vandyke@gmail.com</a>
-											<a href="https://www.linkedin.com/in/paul-van-dyke" target="_blank"><i class="icon fa-linkedin"></i> LinkedIn</a>
-											<a href="https://github.com/paulvandreves" target="_blank"><i class="icon fa-github"></i> GitHub</a>
-										</div>
-									</div>
+      /* ── Header ───────────────────────────────────────────── */
+      .resume-header {
+        text-align: center;
+        padding-bottom: 2rem;
+        margin-bottom: 2.5rem;
+        border-bottom: 1px solid var(--border);
+      }
 
-									<!-- Professional Experience -->
-									<div class="resume-section">
-										<h3>💼 PROFESSIONAL EXPERIENCE</h3>
-										
-										<div class="experience-item">
-											<div class="experience-header">
-												<div>
-													<h4>Software Engineer</h4>
-													<div class="experience-company">Innerspace Healthcare</div>
-												</div>
-												<div class="experience-date">October 2022 - October 2025</div>
-											</div>
-											<div class="experience-description">
-												<ul>
-													<li>Developed a SvelteKit/TypeScript cloud endoscopy and security suite documenting IoT locks and cabinets via AWS Lambda, DynamoDB, S3, SQS, SNS, and AWS IoT <a href="https://www.innerspace.cloud/demo" target="_blank">https://www.innerspace.cloud/demo</a></li>
-													<li>Leveraged Vite to build and optimize applications for AWS Lambda serverless deployments</li>
-													<li>Refactored legacy Vue.js and Python Flask cloud suite into a modern, serverless architecture to improve scalability, maintainability, and code quality</li>
-													<li>Migrated PostgreSQL (Amazon RDS) database to AWS DynamoDB, reducing AWS operational costs by over $300/month and delivering consistent, single-digit millisecond latency for read and write operations</li>
-													<li>Provisioned cloud infrastructure with Terraform (HCL) to enable reproducible, Infrastructure-as-Code (IaC) deployments across staging and production environments</li>
-													<li>Implemented comprehensive unit testing with Vitest and Jest</li>
-													<li>Engineered custom React Cards that extended HubSpot functionality and improved CRM workflows</li>
-													<li>Automated CI/CD pipelines with GitHub Actions for continuous integration and serverless deployments</li>
-													<li>Integrated Generative AI into the Software Development Life Cycle (SDLC) using Cursor, GitHub Copilot, and AI-assisted code review tools</li>
-													<li>Styled responsive and mobile-friendly UI layouts with Tailwind CSS</li>
-												</ul>
-											</div>
-										</div>
+      .resume-header h1 {
+        font-size: clamp(1.6rem, 5vw, 2.4rem);
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: var(--text);
+        margin-bottom: 0.3rem;
+      }
 
-										<div class="experience-item">
-											<div class="experience-header">
-												<div>
-													<h4>Software Engineer</h4>
-													<div class="experience-company">Equivant</div>
-												</div>
-												<div class="experience-date">November 2019 - September 2022</div>
-											</div>
-											<div class="experience-description">
-												<ul>
-													<li>Developed and maintained an ASP.NET (C#) single-page application with over 400 pages in an Agile/Scrum environment, collaborating closely with QA and DevOps</li>
-													<li>Engineered and supported 700+ Selenium WebDriver integration tests</li>
-													<li>Led team meetings on automation goals and strategy</li>
-													<li>Automated security vulnerability and code quality scans with SonarQube</li>
-													<li>Integrated Google Sheets API with Node.js scripts for automated test reporting</li>
-													<li>Committed, merged and reviewed code with Azure Repos</li>
-												</ul>
-											</div>
-										</div>
+      .resume-title {
+        font-size: 0.9rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 1.2rem;
+      }
 
-										<div class="experience-item">
-											<div class="experience-header">
-												<div>
-													<h4>Software Developer</h4>
-													<div class="experience-company">Healthbridge</div>
-												</div>
-												<div class="experience-date">August 2018 - September 2019</div>
-											</div>
-											<div class="experience-description">
-												<ul>
-													<li>Developed and debugged React & Redux front-end in ES6, with Babel and Webpack for a financial SaaS product focused on HSA overdraft protection</li>
-													<li>Engineered Cypress integration tests, increasing code coverage by 40%</li>
-													<li>Designed k6 capacity tests to ensure scalability under high load</li>
-													<li>Automated QA tasks with Robot Framework End-to-End tests</li>
-													<li>Collaborated with the UI/UX teams via Invision</li>
-													<li>Customized SCSS styling to integrate with third-party libraries</li>
-													<li>Connected front end React components to a Java Spring Boot REST API</li>
-												</ul>
-											</div>
-										</div>
+      .resume-contact {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem 1.4rem;
+        font-size: 0.85rem;
+      }
 
-										<div class="experience-item">
-											<div class="experience-header">
-												<div>
-													<h4>Security Operations Analyst</h4>
-													<div class="experience-company">Calvary Solutions</div>
-												</div>
-												<div class="experience-date">July 2017 - July 2018</div>
-											</div>
-											<div class="experience-description">
-												<ul>
-													<li>Supported incident response workflows and documentation in compliance with NERC CIP standards</li>
-													<li>Provided Tier 1 security monitoring and network latency investigations for 80+ power plants</li>
-												</ul>
-											</div>
-										</div>
+      .resume-contact a,
+      .resume-contact span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4em;
+        color: var(--text-muted);
+        transition: color 0.2s;
+      }
 
-										<div class="experience-item">
-											<div class="experience-header">
-												<div>
-													<h4>Software Developer</h4>
-													<div class="experience-company">Galvanize</div>
-												</div>
-												<div class="experience-date">January 2017 - July 2017</div>
-											</div>
-											<div class="experience-description">
-												<ul>
-													<li>Built client side Web Application with JavaScript, HTML, CSS, and jQuery</li>
-													<li>Utilized Google Firebase for client side hosting</li>
-													<li>Deployed RESTful API's with Node, Express, PostgreSQL, and MongoDB to Heroku</li>
-												</ul>
-											</div>
-										</div>
+      .resume-contact a:hover {
+        color: var(--accent);
+      }
 
-										<div class="experience-item">
-											<div class="experience-header">
-												<div>
-													<h4>Non-Commissioned Officer</h4>
-													<div class="experience-company">Marine Corps</div>
-												</div>
-												<div class="experience-date">January 2011 - January 2015</div>
-											</div>
-											<div class="experience-description">
-												<ul>
-													<li>Managed deadly weapons and sensitive equipment totaling millions of dollars</li>
-													<li>Attained secret clearance</li>
-													<li>Awarded Meritorious Mast</li>
-												</ul>
-											</div>
-										</div>
-									</div>
+      /* ── Section headings ─────────────────────────────────── */
+      .resume-section {
+        margin-bottom: 2.5rem;
+      }
 
-									<!-- In The News -->
-									<div class="resume-section">
-										<h3>📰 IN THE NEWS</h3>
-										<div class="news-item">
-											<a href="https://www.record-eagle.com/news/the_biz/tc-native-turns-gamble-into-software-developer-position/article_5d64c8ca-57a6-5eca-bd93-98bf3a30a46a.html" target="_blank">
-												<i class="icon fa-newspaper-o"></i>
-												<span>Record Eagle: TC Native Turns Gamble Into Software Developer Position</span>
-											</a>
-										</div>
-										<div class="news-item">
-											<a href="https://www.usnews.com/news/best-states/michigan/articles/2018-10-21/michigan-man-gets-job-through-tech-incubator" target="_blank">
-												<i class="icon fa-newspaper-o"></i>
-												<span>The Washington Times: Michigan Man Gets Job Through Tech Incubator</span>
-											</a>
-										</div>
-									</div>
+      .resume-section > h3 {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--text-subtle);
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--border);
+      }
 
-									<!-- Download Resume -->
-									<div class="download-resume">
-										<a href="./PaulVanDyke1pageresume.pdf" download="./PaulVanDyke1pageresume.pdf" class="button special icon fa-download">Download PDF Resume</a>
-									</div>
-								</div>
-							</article>
+      /* ── Experience items ─────────────────────────────────── */
+      .experience-item {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0 1rem;
+        padding: 1.1rem 1.2rem;
+        margin-bottom: 0.6rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+      }
 
-						<!-- Contact -->
-							<article id="contact">
-								<!-- <h2 class="major">Contact</h2>
-								<form method="post" action="https://formspree.io/gboss0352@gmail.com"  >
-									<div class="field half first">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field half">
-										<label for="email">Email</label>
-										<input type="email" name="_replyto" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send" class="special" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form> -->
+      .experience-item:hover {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+        transform: translateY(-1px);
+      }
 
-								<!--<form action="https://formspree.io/your@email.com"
-									method="POST">
-									<input type="text" name="name">
-									<input type="email" name="_replyto">
-									<input type="submit" value="Send">
-								</form>-->
+      @media (prefers-color-scheme: dark) {
+        .experience-item:hover {
+          box-shadow: 0 4px 28px rgba(0, 0, 0, 0.5);
+        }
+      }
 
+      .experience-role {
+        grid-column: 1;
+        grid-row: 1;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--text);
+      }
 
-								<ul class="icons">
+      .experience-company {
+        grid-column: 1;
+        grid-row: 2;
+        font-size: 0.85rem;
+        color: var(--accent);
+        margin-bottom: 0.6rem;
+      }
 
+      .experience-date {
+        grid-column: 2;
+        grid-row: 1;
+        font-size: 0.78rem;
+        color: var(--text-subtle);
+        white-space: nowrap;
+        padding-top: 0.15rem;
+        font-variant-numeric: tabular-nums;
+      }
 
-									<li><a href="https://github.com/paulvandreves" class="icon fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
+      .experience-description {
+        grid-column: 1 / -1;
+        grid-row: 3;
+      }
 
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
+      .experience-description ul {
+        list-style: none;
+        padding: 0;
+      }
 
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
+      .experience-description li {
+        position: relative;
+        padding-left: 1.1rem;
+        margin-bottom: 0.3rem;
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        line-height: 1.55;
+      }
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+      .experience-description li::before {
+        content: "›";
+        position: absolute;
+        left: 0;
+        color: var(--bullet);
+        font-size: 1rem;
+        line-height: 1.4;
+      }
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
+      .experience-description a {
+        color: var(--accent);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
 
-								<section>
-									<h3 class="major">Lists</h3>
+      /* ── News items ───────────────────────────────────────── */
+      .news-item {
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.5rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 0.875rem;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+      }
 
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+      .news-item:hover {
+        box-shadow: var(--shadow);
+        transform: translateY(-1px);
+      }
 
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+      .news-item a {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        color: var(--text-muted);
+      }
 
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-									</ul>
+      .news-item a:hover {
+        color: var(--accent);
+      }
 
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button special">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions vertical">
-										<li><a href="#" class="button special">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
+      /* ── Download bar ─────────────────────────────────────── */
+      .download-bar {
+        display: flex;
+        justify-content: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+        margin-top: 2.5rem;
+      }
 
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5em;
+        padding: 0.6em 1.4em;
+        font-size: 0.875rem;
+        font-weight: 500;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          border-color 0.2s,
+          color 0.2s,
+          transform 0.15s;
+        text-decoration: none;
+        color: var(--text-muted);
+        background: var(--surface);
+      }
 
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
+      .btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        transform: translateY(-1px);
+      }
 
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button special">Special</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button special icon fa-download">Icon</a></li>
-										<li><a href="#" class="button icon fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button special disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
+      .btn-primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #fff;
+      }
 
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="field half first">
-											<label for="demo-name">Name</label>
-											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-										</div>
-										<div class="field half">
-											<label for="demo-email">Email</label>
-											<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-										</div>
-										<div class="field">
-											<label for="demo-category">Category</label>
-											<div class="select-wrapper">
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-										</div>
-										<div class="field half first">
-											<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-											<label for="demo-priority-low">Low</label>
-										</div>
-										<div class="field half">
-											<input type="radio" id="demo-priority-high" name="demo-priority">
-											<label for="demo-priority-high">High</label>
-										</div>
-										<div class="field half first">
-											<input type="checkbox" id="demo-copy" name="demo-copy">
-											<label for="demo-copy">Email me a copy</label>
-										</div>
-										<div class="field half">
-											<input type="checkbox" id="demo-human" name="demo-human" checked>
-											<label for="demo-human">Not a robot</label>
-										</div>
-										<div class="field">
-											<label for="demo-message">Message</label>
-											<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="special" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
+      .btn-primary:hover {
+        background: var(--accent-hover);
+        border-color: var(--accent-hover);
+        color: #fff;
+      }
 
-							</article>
+      /* ── Mobile ───────────────────────────────────────────── */
+      @media screen and (max-width: 600px) {
+        .resume-page {
+          padding: 2rem 1rem 3rem;
+        }
 
-					</div>
+        .resume-contact {
+          gap: 0.4rem 1rem;
+        }
 
-				<!-- Footer -->
-					<footer id="footer">
-						<!-- <p class="copyright">&copy; Untitled.</p> -->
-					</footer>
+        .experience-item {
+          grid-template-columns: 1fr;
+        }
 
-			</div>-->
+        .experience-date {
+          grid-column: 1;
+          grid-row: 2;
+          margin-bottom: 0.3rem;
+        }
 
-		<!-- BG -->
-			<div id="bg"></div>
+        .experience-company {
+          grid-row: 3;
+        }
+        .experience-description {
+          grid-row: 4;
+        }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        .download-bar {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="main">
+        <article id="Resume">
+          <div class="resume-page">
+            <!-- Header -->
+            <div class="resume-header">
+              <h1>PAUL VAN DYKE</h1>
+              <div class="resume-title">Full Stack Software Engineer</div>
+              <div class="resume-contact">
+                <span><i class="icon fa-phone"></i> (231) 633-9666</span>
+                <a href="mailto:paul.aaron.vandyke@gmail.com">
+                  <i class="icon fa-envelope"></i> paul.aaron.vandyke@gmail.com
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/paul-van-dyke"
+                  target="_blank"
+                >
+                  <i class="icon fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/paulvandreves" target="_blank">
+                  <i class="icon fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
 
-	</body>
+            <!-- Professional Experience -->
+            <div class="resume-section">
+              <h3>Professional Experience</h3>
+
+              <div class="experience-item">
+                <div class="experience-role">Senior Developer</div>
+                <div class="experience-date">Jan 2026 – Present</div>
+                <div class="experience-company">Haworth</div>
+                <div class="experience-description">
+                  <ul>
+                    <li>Modernizing legacy applications using the Strangler Fig pattern and microservices architecture with TypeScript, C# / .NET, and Angular</li>
+                    <li>Mentoring junior developers through code reviews, pair programming, and technical guidance</li>
+                    <li>Implementing over 250 integration tests covering legacy API endpoints</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-role">Software Engineer</div>
+                <div class="experience-date">Oct 2022 – Oct 2025</div>
+                <div class="experience-company">Innerspace Healthcare</div>
+                <div class="experience-description">
+                  <ul>
+                    <li>
+                      Developed a SvelteKit/TypeScript cloud endoscopy and
+                      security suite documenting IoT locks and cabinets via AWS
+                      Lambda, DynamoDB, S3, SQS, SNS, and AWS IoT —
+                      <a
+                        href="https://www.innerspace.cloud"
+                        target="_blank"
+                        >innerspace.cloud</a
+                      >
+                    </li>
+                    <li>
+                      Leveraged Vite to build and optimize applications for AWS
+                      Lambda serverless deployments
+                    </li>
+                    <li>
+                      Refactored legacy Vue.js and Python Flask cloud suite into
+                      a modern, serverless architecture to improve scalability,
+                      maintainability, and code quality
+                    </li>
+                    <li>
+                      Migrated PostgreSQL (Amazon RDS) database to AWS DynamoDB,
+                      reducing AWS operational costs by over $300/month and
+                      delivering consistent, single-digit millisecond latency
+                    </li>
+                    <li>
+                      Provisioned cloud infrastructure with Terraform (HCL) for
+                      reproducible Infrastructure-as-Code deployments across
+                      staging and production
+                    </li>
+                    <li>
+                      Implemented comprehensive unit testing with Vitest and
+                      Jest
+                    </li>
+                    <li>
+                      Engineered custom React Cards that extended HubSpot
+                      functionality and improved CRM workflows
+                    </li>
+                    <li>
+                      Automated CI/CD pipelines with GitHub Actions for
+                      continuous integration and serverless deployments
+                    </li>
+                    <li>
+                      Integrated Generative AI into the SDLC using Cursor,
+                      GitHub Copilot, and AI-assisted code review tools
+                    </li>
+                    <li>
+                      Styled responsive and mobile-friendly UI layouts with
+                      Tailwind CSS
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-role">Software Engineer</div>
+                <div class="experience-date">Nov 2019 – Sep 2022</div>
+                <div class="experience-company">Equivant</div>
+                <div class="experience-description">
+                  <ul>
+                    <li>
+                      Developed and maintained an ASP.NET (C#) single-page
+                      application with over 400 pages in an Agile/Scrum
+                      environment, collaborating closely with QA and DevOps
+                    </li>
+                    <li>
+                      Engineered and supported 700+ Selenium WebDriver
+                      integration tests
+                    </li>
+                    <li>Led team meetings on automation goals and strategy</li>
+                    <li>
+                      Automated security vulnerability and code quality scans
+                      with SonarQube
+                    </li>
+                    <li>
+                      Integrated Google Sheets API with Node.js scripts for
+                      automated test reporting
+                    </li>
+                    <li>
+                      Committed, merged, and reviewed code with Azure Repos
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-role">Software Developer</div>
+                <div class="experience-date">Aug 2018 – Sep 2019</div>
+                <div class="experience-company">Healthbridge</div>
+                <div class="experience-description">
+                  <ul>
+                    <li>
+                      Developed and debugged React &amp; Redux front-end in ES6
+                      with Babel and Webpack for a financial SaaS product
+                      focused on HSA overdraft protection
+                    </li>
+                    <li>
+                      Engineered Cypress integration tests, increasing code
+                      coverage by 40%
+                    </li>
+                    <li>
+                      Designed k6 capacity tests to ensure scalability under
+                      high load
+                    </li>
+                    <li>
+                      Automated QA tasks with Robot Framework End-to-End tests
+                    </li>
+                    <li>Collaborated with the UI/UX teams via Invision</li>
+                    <li>
+                      Customized SCSS styling to integrate with third-party
+                      libraries
+                    </li>
+                    <li>
+                      Connected front end React components to a Java Spring Boot
+                      REST API
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-role">Security Operations Analyst</div>
+                <div class="experience-date">Jul 2017 – Jul 2018</div>
+                <div class="experience-company">Calvary Solutions</div>
+                <div class="experience-description">
+                  <ul>
+                    <li>
+                      Supported incident response workflows and documentation in
+                      compliance with NERC CIP standards
+                    </li>
+                    <li>
+                      Provided Tier 1 security monitoring and network latency
+                      investigations for 80+ power plants
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-role">Software Developer</div>
+                <div class="experience-date">Jan 2017 – Jul 2017</div>
+                <div class="experience-company">Galvanize</div>
+                <div class="experience-description">
+                  <ul>
+                    <li>
+                      Built client side web application with JavaScript, HTML,
+                      CSS, and jQuery
+                    </li>
+                    <li>Utilized Google Firebase for client side hosting</li>
+                    <li>
+                      Deployed RESTful APIs with Node, Express, PostgreSQL, and
+                      MongoDB to Heroku
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="experience-item">
+                <div class="experience-role">Non-Commissioned Officer</div>
+                <div class="experience-date">Jan 2011 – Jan 2015</div>
+                <div class="experience-company">Marine Corps</div>
+                <div class="experience-description">
+                  <ul>
+                    <li>
+                      Managed weapons and sensitive equipment totaling millions
+                      of dollars
+                    </li>
+                    <li>Attained secret clearance</li>
+                    <li>Awarded Meritorious Mast</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- In The News -->
+            <div class="resume-section">
+              <h3>In The News</h3>
+              <div class="news-item">
+                <a
+                  href="https://www.record-eagle.com/news/the_biz/tc-native-turns-gamble-into-software-developer-position/article_5d64c8ca-57a6-5eca-bd93-98bf3a30a46a.html"
+                  target="_blank"
+                >
+                  <i class="icon fa-newspaper-o"></i>
+                  <span
+                    >Record Eagle: TC Native Turns Gamble Into Software
+                    Developer Position</span
+                  >
+                </a>
+              </div>
+              <div class="news-item">
+                <a
+                  href="https://www.usnews.com/news/best-states/michigan/articles/2018-10-21/michigan-man-gets-job-through-tech-incubator"
+                  target="_blank"
+                >
+                  <i class="icon fa-newspaper-o"></i>
+                  <span
+                    >The Washington Times: Michigan Man Gets Job Through Tech
+                    Incubator</span
+                  >
+                </a>
+              </div>
+            </div>
+
+            <!-- Downloads -->
+            <div class="download-bar">
+              <a
+                href="./resume.html"
+                download="PaulVanDykeResume.html"
+                class="btn btn-primary"
+              >
+                <i class="icon fa-download"></i> Download HTML Resume
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
 </html>
